@@ -12,7 +12,7 @@ Engine::Engine() : db("yap.db") {
         "firstName TEXT,"
         "lastName TEXT,"
         "gender TEXT,"
-        "username TEXT UNIQUE,"
+        "username TEXT UNIQUE PRIMARY KEY,"
         "email TEXT,"
         "password TEXT,"
         "bio TEXT);"
@@ -20,7 +20,6 @@ Engine::Engine() : db("yap.db") {
 }
 
 void Engine::registerUser(string fn, string ln, string uname, string gender, string email, string pass) {
-
     //Check if username exists
     string checkQuery = "SELECT username FROM users WHERE username='" + uname + "';";
 
@@ -35,17 +34,13 @@ void Engine::registerUser(string fn, string ln, string uname, string gender, str
     sqlite3_finalize(stmt);
 
     //Insert user
-    string query =
-        "INSERT INTO users (firstName, lastName, gender, username, email, password, bio) VALUES ('" +
-        fn + "','" + ln + "','" + gender + "','" + uname + "','" + email + "','" + pass + "','');";
+    string query = "INSERT INTO users (firstName, lastName, gender, username, email, password, bio) VALUES ('" + fn + "','" + ln + "','" + gender + "','" + uname + "','" + email + "','" + pass + "','');";
 
     db.execute(query);
 }
 
-bool Engine::login(string uname, string pass)
-{
-    string query =
-        "SELECT password FROM users WHERE username='" + uname + "';";
+bool Engine::login(string uname, string pass) {
+    string query = "SELECT password FROM users WHERE username='" + uname + "';";
 
     sqlite3_stmt* stmt;
     sqlite3_prepare_v2(db.get(), query.c_str(), -1, &stmt, 0);

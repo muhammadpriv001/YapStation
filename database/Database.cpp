@@ -4,7 +4,7 @@
 
 //Constructor
 Database::Database(string name) {
-    if (sqlite3_open(name.c_str(), &db)) {
+    if(sqlite3_open(name.c_str(), &db)) {
         cout << "DB Error\n";
     }
 }
@@ -16,12 +16,11 @@ Database::~Database() {
 
 //INSERT Query
 bool Database::execute(const string& query) {
-
     char* errMsg = nullptr;
 
     int rc = sqlite3_exec(this->db, query.c_str(), 0, 0, &errMsg);
 
-    if (rc != SQLITE_OK) {
+    if(rc != SQLITE_OK) {
         sqlite3_free(errMsg);
         return false;
     }

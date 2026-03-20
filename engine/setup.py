@@ -8,12 +8,12 @@ ext_modules = [
             "Engine.cpp",
             "bindings.cpp",
 
-            # YOUR IMPLEMENTED MODULES
+            #IMPLEMENTED MODULES
             "user/User.cpp",
             "user/Person.cpp",
             "../database/Database.cpp",
 
-            # SQLite (required because Database uses it)
+            #SQLite
             "../database/sqlite-amalgamation-351030/sqlite3.c",
         ],
         include_dirs=[
