@@ -1,0 +1,296 @@
+<html class="dark" lang="en"><head></head><body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased min-h-screen">```html
+
+
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>YapStation | Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#a855f7",
+                        "background-light": "#f7f5f8",
+                        "background-dark": "#191022",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #4d3168;
+            border-radius: 10px;
+        }
+    </style>
+<div class="flex h-screen overflow-hidden">
+<!-- Sidebar Navigation -->
+<aside class="w-72 border-r border-primary/20 bg-background-light dark:bg-background-dark flex flex-col p-6 gap-8 overflow-y-auto custom-scrollbar">
+<div class="flex items-center gap-3">
+<div class="bg-primary/20 p-2 rounded-xl">
+<span class="material-symbols-outlined text-primary text-3xl">rocket_launch</span>
+</div>
+<div>
+<h1 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">YapStation</h1>
+<p class="text-xs text-primary font-medium uppercase tracking-widest">Network v2.0</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-200 hover:bg-primary/10 text-slate-600 dark:text-slate-400" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-medium">Chats</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-200 hover:bg-primary/10 text-slate-600 dark:text-slate-400" href="#">
+<span class="material-symbols-outlined">podcasts</span>
+<span class="font-medium">YapStations</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-200 hover:bg-primary/10 text-slate-600 dark:text-slate-400" href="#">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-medium">Discover</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-200 hover:bg-primary/10 text-slate-600 dark:text-slate-400" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-medium">Settings</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-xl bg-primary/20 text-primary" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-medium">Profile</span>
+</a>
+</nav>
+<div class="mt-auto p-4 bg-primary/5 rounded-2xl border border-primary/10">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold">CY</div>
+<div>
+<p class="text-sm font-bold truncate">@cosmic_yapper</p>
+<p class="text-xs text-slate-500">Pro Member</p>
+</div>
+</div>
+<button class="w-full py-2 bg-primary text-white rounded-lg font-medium text-sm hover:opacity-90 transition-opacity">
+                    New Yap
+                </button>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto custom-scrollbar">
+<!-- Hero Banner -->
+<div class="h-48 w-full bg-gradient-to-r from-primary/40 to-indigo-900 relative">
+<div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20" data-alt="Subtle dark carbon fiber pattern texture"></div>
+</div>
+<!-- Profile Info Container -->
+<div class="max-w-4xl mx-auto px-6 -mt-16 relative">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div class="relative">
+<div class="w-32 h-32 rounded-3xl border-4 border-background-dark overflow-hidden bg-background-dark shadow-2xl">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="Futuristic neon synthwave style character avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWXzTNl0bppAa-Yo7l5hnMEnDluWcMdSzlOcBlxbKIRHbcJzjOT4-rHiHSdkcNFl8mPxZrQ4Hhm85bS1_-0pCjDePmMeZ4O7jW0zIctS5QMLEty0zrKbFIpn7ccTugtMc4UxN5DYtWrABUCDELd4bB5Ci9CyyEGMhTbkFeRbmvoNnZqU8m3PvcLCYvlIuw5K0MAc0VR-fQj2Udpz7lD-ISMji5I47cvUcfD7eB69MBQuOM5fXKoVHbQ_oDsEMMrtFFcGFfnvQycPSq"/>
+</div>
+</div>
+<div class="flex gap-3 pb-2">
+<button class="px-6 py-2 rounded-xl border border-primary/30 text-primary font-medium hover:bg-primary/10 transition-colors">
+                            Edit Profile
+                        </button>
+</div>
+</div>
+<div class="mt-6">
+<h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">Cosmic Yapper</h2>
+<p class="text-primary font-medium">@cosmic_yapper</p>
+<p class="mt-4 text-lg text-slate-600 dark:text-slate-300 max-w-2xl leading-relaxed">
+                        Exploring the digital frontier one yap at a time. Architect of decentralized noise and signal hunter in the neon void. 🚀
+                    </p>
+<div class="flex flex-wrap items-center gap-6 mt-6 text-slate-500 dark:text-slate-400">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-lg">location_on</span>
+<span class="text-sm">Neo-Tokyo</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-lg">link</span>
+<a class="text-sm text-primary hover:underline" href="#">yapstation.io/cosmic</a>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-lg">calendar_month</span>
+<span class="text-sm">Joined Feb 2024</span>
+</div>
+</div>
+<div class="flex gap-8 mt-6 pb-6">
+<div class="flex gap-1 items-baseline">
+<span class="font-bold text-slate-900 dark:text-white">1.2k</span>
+<span class="text-sm text-slate-500 uppercase tracking-wider">Following</span>
+</div>
+<div class="flex gap-1 items-baseline">
+<span class="font-bold text-slate-900 dark:text-white">45.8k</span>
+<span class="text-sm text-slate-500 uppercase tracking-wider">Yappers</span>
+</div>
+</div>
+</div>
+<!-- Tabs -->
+<div class="border-b border-primary/10 flex gap-12 mt-4 sticky top-0 bg-background-light dark:bg-background-dark z-10">
+<button class="pb-4 text-sm font-bold border-b-2 border-primary text-primary transition-all">
+                        POSTS
+                    </button>
+<button class="pb-4 text-sm font-bold text-slate-500 border-b-2 border-transparent hover:text-slate-300 transition-all">
+                        YAPSTATIONS
+                    </button>
+</div>
+<!-- Feed Content -->
+<div class="py-8 flex flex-col gap-6">
+<!-- Post Card 1 -->
+<div class="group bg-primary/5 border border-primary/10 rounded-2xl overflow-hidden hover:border-primary/30 transition-all duration-300">
+<div class="p-6">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-indigo-600 flex items-center justify-center font-bold text-white text-xs">CY</div>
+<div>
+<p class="font-bold text-sm">Cosmic Yapper</p>
+<p class="text-xs text-slate-500">2 hours ago</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-500 cursor-pointer">more_horiz</span>
+</div>
+<h3 class="text-xl font-bold mb-3 text-slate-900 dark:text-slate-100">The future of decentralized yapping is here.</h3>
+<p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+                                The violet hues of the network are pulsing with energy tonight. We've officially crossed 10 million nodes in the YapStation mesh. Resistance is futile, communication is inevitable. #YapStation #Futuristic #Web4
+                            </p>
+<div class="w-full aspect-video rounded-xl overflow-hidden mb-6">
+<img alt="Cyber Grid" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Abstract glowing blue and purple digital earth network grid" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcaEcxNlGtWUT5oIjH1bhTTa1dQ-Rli3rg2aPy8PNQGAckJy6CvhtdKMHNwjvLmfL0ba9-6SDLcaEvUacTlddcQjmVLwnZ95LnRRh4WcgYLWkPvKSvaHBDKN3S-QbUwci2h9J-RhgWGz5Ivgn8VFw_JhUrF97y9j4A_rJ0FHSkq8XiWuHkBpJQD7KGcTwfrafeDYtjci16KOzmclvCY3ppGlxHXDxiNGotXD19bNO43UU64LK-l3gizBIH_oMx8Witb5PAOmIplig-"/>
+</div>
+<div class="flex justify-end">
+<button class="flex items-center gap-2 px-6 py-2 bg-primary text-white rounded-xl font-medium hover:brightness-110 transition-all shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-sm">share</span>
+<span>Share Yap</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Post Card 2 -->
+<div class="group bg-primary/5 border border-primary/10 rounded-2xl overflow-hidden hover:border-primary/30 transition-all duration-300">
+<div class="p-6">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-indigo-600 flex items-center justify-center font-bold text-white text-xs">CY</div>
+<div>
+<p class="font-bold text-sm">Cosmic Yapper</p>
+<p class="text-xs text-slate-500">5 hours ago</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-500 cursor-pointer">more_horiz</span>
+</div>
+<h3 class="text-xl font-bold mb-3 text-slate-900 dark:text-slate-100">Quantum encryption protocols updated.</h3>
+<p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+                                Stay secure in the void. All yaps are now end-to-end encrypted across the station using the latest lattice-based cryptography. Your voice is yours alone.
+                            </p>
+<div class="flex justify-end">
+<button class="flex items-center gap-2 px-6 py-2 bg-primary text-white rounded-xl font-medium hover:brightness-110 transition-all shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-sm">share</span>
+<span>Share Yap</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Post Card 3 -->
+<div class="group bg-primary/5 border border-primary/10 rounded-2xl overflow-hidden hover:border-primary/30 transition-all duration-300">
+<div class="p-6">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-indigo-600 flex items-center justify-center font-bold text-white text-xs">CY</div>
+<div>
+<p class="font-bold text-sm">Cosmic Yapper</p>
+<p class="text-xs text-slate-500">Yesterday</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-500 cursor-pointer">more_horiz</span>
+</div>
+<h3 class="text-xl font-bold mb-3 text-slate-900 dark:text-slate-100">Deep Space Signals Captured.</h3>
+<p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+                                Our listening posts in the Orion sector just picked up something incredible. Decoding it tonight on the main channel. Tune in.
+                            </p>
+<div class="w-full aspect-video rounded-xl overflow-hidden mb-6">
+<img alt="Space" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Satellite in orbit around earth with atmospheric glow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAK3lLIGOZzi_1LAuiptY8bMoyFf0eKU4VbmdWua-t38X79CrN12_yIthb_EoXNAxrVrL0lKbRfYdIBXVjzAh9-Re9RWchICNySun2lUyyz2G33J3LfcexM6MUKqeTWxZHaTWS1EG2ixLmMzwhS3wzdO4dd92fDpw5SXfVnO6D3QCtVxXkk7BrsaZNtF5rrbDRHqB11yZcmCGoAhR4Yesmytg9tudClEfxvXHDbcgHmagNwGSmv4gJeaVxR4GyFnwabGolMasyKqT4c"/>
+</div>
+<div class="flex justify-end">
+<button class="flex items-center gap-2 px-6 py-2 bg-primary text-white rounded-xl font-medium hover:brightness-110 transition-all shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-sm">share</span>
+<span>Share Yap</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Right Side - Trending/Suggestions -->
+<aside class="hidden xl:flex w-80 border-l border-primary/20 bg-background-light dark:bg-background-dark flex-col p-6 gap-8 overflow-y-auto custom-scrollbar">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-500">search</span>
+<input class="w-full bg-primary/5 border border-primary/10 rounded-xl py-2 pl-10 pr-4 text-sm focus:outline-none focus:ring-1 focus:ring-primary/50 text-slate-100 placeholder:text-slate-500" placeholder="Search the void..." type="text"/>
+</div>
+<div class="bg-primary/5 border border-primary/10 rounded-2xl p-5">
+<h4 class="font-bold text-lg mb-4 text-slate-900 dark:text-white">Trending Yaps</h4>
+<div class="flex flex-col gap-4">
+<div>
+<p class="text-xs text-primary font-bold">#NEOTOKYO</p>
+<p class="text-sm font-medium">Cyber-raves at District 9</p>
+<p class="text-xs text-slate-500">12.4k yaps</p>
+</div>
+<div>
+<p class="text-xs text-primary font-bold">#VOID_ENERGY</p>
+<p class="text-sm font-medium">New meditation protocols</p>
+<p class="text-xs text-slate-500">8.2k yaps</p>
+</div>
+<div>
+<p class="text-xs text-primary font-bold">#YAPSTATION_PRO</p>
+<p class="text-sm font-medium">New theme engine released</p>
+<p class="text-xs text-slate-500">24.1k yaps</p>
+</div>
+</div>
+</div>
+<div class="bg-primary/5 border border-primary/10 rounded-2xl p-5">
+<h4 class="font-bold text-lg mb-4 text-slate-900 dark:text-white">Suggested Yappers</h4>
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-indigo-500"></div>
+<div>
+<p class="text-xs font-bold">@neon_drifter</p>
+<p class="text-[10px] text-slate-500">Explorer</p>
+</div>
+</div>
+<button class="text-xs text-primary font-bold">Follow</button>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-emerald-500"></div>
+<div>
+<p class="text-xs font-bold">@synth_soul</p>
+<p class="text-[10px] text-slate-500">Musician</p>
+</div>
+</div>
+<button class="text-xs text-primary font-bold">Follow</button>
+</div>
+</div>
+</div>
+<div class="text-[10px] text-slate-500 flex flex-wrap gap-2 px-2">
+<a class="hover:text-primary transition-colors" href="#">Privacy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms</a>
+<a class="hover:text-primary transition-colors" href="#">Protocols</a>
+<p>© 2024 YapStation Corp.</p>
+</div>
+</aside>
+</div>
+```</body></html>

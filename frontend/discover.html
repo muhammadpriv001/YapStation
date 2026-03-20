@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>YapStation - Discover</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#a855f7",
+                        "background-light": "#f7f5f8",
+                        "background-dark": "#191022",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased min-h-screen">
+<div class="flex h-screen overflow-hidden">
+<!-- Sidebar Navigation - Updated to match SCREEN_3 style -->
+<aside class="w-20 lg:w-64 border-r border-primary/10 flex flex-col bg-background-light dark:bg-background-dark transition-all duration-300">
+<div class="p-6 flex items-center gap-3">
+<div class="h-10 w-10 rounded-xl bg-primary flex items-center justify-center text-white shadow-lg shadow-primary/20 shrink-0">
+<span class="material-symbols-outlined text-2xl">rocket_launch</span>
+</div>
+<div class="hidden md:block">
+<h1 class="text-lg font-bold tracking-tight text-slate-900 dark:text-slate-100 uppercase leading-tight">YapStation</h1>
+<p class="text-[10px] text-primary font-bold uppercase tracking-widest leading-none">Outer Rim</p>
+</div>
+</div>
+<nav class="flex-1 px-3 space-y-1 mt-4">
+<a class="flex items-center gap-3 px-4 py-3 rounded-full text-slate-400 hover:bg-primary/10 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-medium hidden lg:block">Chats</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-full text-slate-400 hover:bg-primary/10 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">podcasts</span>
+<span class="font-medium hidden lg:block">YapStations</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-full bg-primary text-white transition-all shadow-lg shadow-primary/20" href="#">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-medium hidden lg:block">Discover</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-full text-slate-400 hover:bg-primary/10 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-medium hidden md:block">Settings</span>
+</a>
+</nav>
+<div class="p-4 mt-auto">
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-3 px-2 md:px-4 rounded-xl shadow-lg shadow-primary/30 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">add</span>
+<span class="hidden lg:block">New Yap</span>
+</button>
+<div class="mt-4 pt-4 border-t border-primary/10">
+<div class="flex items-center gap-3 p-2 rounded-xl hover:bg-primary/5 transition-colors cursor-pointer">
+<div class="relative shrink-0">
+<div class="h-10 w-10 rounded-full bg-slate-200 dark:bg-slate-800 border border-primary/20 overflow-hidden" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCIx6xzyfewmR3UptSXhVtvP5IxAtgEsUkMv1d-9QbxD2SVMesdyXl2-b1wWSL_lISV_GlvxJnOhBDk_tUeeHa7njc278u3pgRPotQHjEzSsV_-m37qBitb932A8JnvDVNVYccp_CCqkDpi154969kXOUq6ljMct76eD_Kqbu2ARM87b0EqucwLhyB3YhLX4fMPuTpe5RFQ-Mt6QpyuF6kK9SSOtTzA_3NVRm8-1OXvvTmzbFXGZLO1a3XGwdn-N-yLxajXpSAVd-Z2"); background-size: cover;'></div>
+<div class="absolute bottom-0 right-0 h-3 w-3 bg-green-500 rounded-full border-2 border-background-dark"></div>
+</div>
+<div class="hidden md:block overflow-hidden">
+<p class="text-sm font-semibold truncate">Alex Vortex</p>
+<p class="text-xs text-slate-500 truncate">Online</p>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto bg-background-light dark:bg-background-dark relative">
+<!-- Header -->
+<header class="sticky top-0 z-10 flex items-center justify-between px-4 md:px-8 py-4 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10">
+<div class="flex items-center gap-4 flex-1 max-w-xl">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="w-full bg-primary/5 border-primary/10 focus:border-primary focus:ring-primary rounded-xl pl-10 pr-4 py-2 text-sm transition-all outline-none dark:text-slate-100" placeholder="Search the galaxy..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-3 ml-4">
+<button class="p-2 rounded-xl bg-primary/10 text-primary hover:bg-primary/20 transition-colors hidden sm:block">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 rounded-xl bg-primary/10 text-primary hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined">auto_awesome</span>
+</button>
+</div>
+</header>
+<div class="p-4 lg:p-8 max-w-6xl mx-auto">
+<!-- Hero Section -->
+<section class="mb-8 md:mb-12 relative overflow-hidden rounded-3xl bg-gradient-to-r from-primary/20 to-fuchsia-900/20 border border-primary/20 p-6 md:p-12">
+<div class="relative z-10">
+<h2 class="text-3xl md:text-5xl font-black mb-4 tracking-tight leading-tight">Cosmic Discovery</h2>
+<p class="text-slate-600 dark:text-slate-400 text-base md:text-lg max-w-md">Find new voices and celestial communities across the infinite digital universe.</p>
+<div class="flex flex-wrap gap-3 mt-6 md:mt-8">
+<button class="bg-primary text-white px-6 py-2.5 rounded-xl font-bold hover:opacity-90 transition-opacity">Warp Now</button>
+<button class="bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200 px-6 py-2.5 rounded-xl font-bold hover:bg-opacity-80 transition-all">Recent Signals</button>
+</div>
+</div>
+<!-- Decorative background elements -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/10 blur-[100px] rounded-full"></div>
+<div class="absolute bottom-0 left-1/2 w-96 h-96 bg-fuchsia-500/5 blur-[120px] rounded-full"></div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Suggested Yappers & Trending (Main Area) -->
+<div class="lg:col-span-8 space-y-8 md:space-y-12">
+<!-- Suggested Yappers -->
+<div class="space-y-6">
+<div class="flex items-center justify-between">
+<h3 class="text-xl font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">person_search</span>
+                                Suggested Yappers
+                            </h3>
+<button class="text-sm text-primary font-medium hover:underline">View All</button>
+</div>
+<!-- Responsive Grid for Yappers -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+<!-- Yapper Card 1 -->
+<div class="bg-primary/5 border border-primary/10 p-4 rounded-2xl flex items-center gap-4 hover:border-primary/30 transition-all group cursor-pointer">
+<div class="relative shrink-0">
+<div class="h-14 w-14 rounded-full bg-slate-800 overflow-hidden" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDQgetTM9Mszfoku2GGSnAtWJ6N1OiszbG9gpUghPNiJ-3EmfEof6m3oB9OplhqHN-S6wiDD-2ufJg1wqtsn8oqrNBhW_qye4Z07lK9XRtMTjg7nwE1Tj65aYtEc0wKBY4luQ3AFDsPk8A1PTEx0ZKkFRdCw1dq0GeekTNJD1SXPNHivRYx9JQKQiIU0bucYKjqQKBTBoHoQzLfc7B3pO_TJ6tHGyfGHq-Z7z2-eImT3GlpKC3WX6i0rrKtTj2pMPJmDqejBpFhOdcc"); background-size: cover;'></div>
+<div class="absolute bottom-0 right-0 h-3.5 w-3.5 bg-green-500 border-2 border-background-dark rounded-full"></div>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-bold truncate group-hover:text-primary transition-colors">NebulaExplorer</h4>
+<p class="text-xs text-slate-500 truncate">@stardust_traveler</p>
+</div>
+<button class="bg-primary/10 text-primary hover:bg-primary hover:text-white px-4 py-1.5 rounded-lg text-sm font-bold transition-all shrink-0">Follow</button>
+</div>
+<!-- Yapper Card 2 -->
+<div class="bg-primary/5 border border-primary/10 p-4 rounded-2xl flex items-center gap-4 hover:border-primary/30 transition-all group cursor-pointer">
+<div class="relative shrink-0">
+<div class="h-14 w-14 rounded-full bg-slate-800 overflow-hidden" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBndiV7AVcaFJVfK2ZnDzgSv_E1WmjS3In3kKbDmIMbj9TXcMZ8y6pFZgL1OcdVAsoCrht8kLO-J_FDONp9smdMpmak4mdCXkOZNPwk19OyZATLy-Ld6BN3JMizousmp1p_U5PNKnZeDhc3YuFvxR_dRqyFe3YOfsnwymJpVseJv0q3ALuM1mbRSGgtPH-Z1RKwHSGzghFEpcMtAzOn5IoaUnfTdy7crny8Z1kyyFGdUdeJH5zy0eSoEdQQ1o5AEKn9xJrRis5JNw1n"); background-size: cover;'></div>
+<div class="absolute bottom-0 right-0 h-3.5 w-3.5 bg-slate-500 border-2 border-background-dark rounded-full"></div>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-bold truncate group-hover:text-primary transition-colors">VoidRunner</h4>
+<p class="text-xs text-slate-500 truncate">@into_the_abyss</p>
+</div>
+<button class="bg-primary/10 text-primary hover:bg-primary hover:text-white px-4 py-1.5 rounded-lg text-sm font-bold transition-all shrink-0">Follow</button>
+</div>
+<!-- Yapper Card 3 -->
+<div class="bg-primary/5 border border-primary/10 p-4 rounded-2xl flex items-center gap-4 hover:border-primary/30 transition-all group cursor-pointer">
+<div class="relative shrink-0">
+<div class="h-14 w-14 rounded-full bg-slate-800 overflow-hidden" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuApifLy5h4OXGYCpelQzcaG4HDnkTfuRly3gCD8DYAMzJ9FjYV-Wusi-OywFnAMqNkG8yEJ11plnYe2uwK1UYBLivPQGQoUaNURlXRIkbdP5LybD07bKa3aUh1Bmia55ASzPMgvL0-C__n8z3EDG1SQtBAq_MSH1R6XU1gSA-U-tWCsCbNX18JxgDVstvx3Mm-IpQ5NTFSqoxBjnyyX-lw0-wJIksLxFwgrpgwaBdNoLqFxt0WwVnLxFl_yGadsGdRuUjhLkF9lSwiP"); background-size: cover;'></div>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-bold truncate group-hover:text-primary transition-colors">PulsarPulse</h4>
+<p class="text-xs text-slate-500 truncate">@rhythmic_signals</p>
+</div>
+<button class="bg-primary/10 text-primary hover:bg-primary hover:text-white px-4 py-1.5 rounded-lg text-sm font-bold transition-all shrink-0">Follow</button>
+</div>
+<!-- Yapper Card 4 -->
+<div class="bg-primary/5 border border-primary/10 p-4 rounded-2xl flex items-center gap-4 hover:border-primary/30 transition-all group cursor-pointer">
+<div class="relative shrink-0">
+<div class="h-14 w-14 rounded-full bg-slate-800 overflow-hidden" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA32JmgC1JInd7FUcXK2jW3h4sm4HR1LASopmY4Qulrk7CtxOnp1A3FXIw1Mf4CZ-v_e4lc18mcOs80sXbe1FsFI5O3XaR5AhQ07NmeuQhinHA6NTSnxcRr62hK3DFfFjhIGQtWZ93wof6cIc1oXwu7AAeEf283vqCwxkHUFc0EC94EWksecDgPniBwiUTevU3huqy3c5oEdFwRSifmIm9izlkj5VItoOCFOmCXvWCyd7Ch2aPFlhKDEmQ2FjNhpEcLhXfKAgY1PByL"); background-size: cover;'></div>
+<div class="absolute bottom-0 right-0 h-3.5 w-3.5 bg-green-500 border-2 border-background-dark rounded-full"></div>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-bold truncate group-hover:text-primary transition-colors">AstroCat</h4>
+<p class="text-xs text-slate-500 truncate">@meow_in_space</p>
+</div>
+<button class="bg-primary/10 text-primary hover:bg-primary hover:text-white px-4 py-1.5 rounded-lg text-sm font-bold transition-all shrink-0">Follow</button>
+</div>
+</div>
+</div>
+<!-- Trending Conversations -->
+<div class="space-y-6">
+<h3 class="text-xl font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">analytics</span>
+                            Trending Conversations
+                        </h3>
+<div class="bg-primary/5 border border-primary/10 rounded-3xl divide-y divide-primary/10 overflow-hidden">
+<div class="p-4 md:p-6 hover:bg-primary/10 transition-colors flex justify-between items-center cursor-pointer">
+<div>
+<p class="text-xs font-bold text-primary tracking-widest uppercase">Technology</p>
+<h5 class="font-bold text-base md:text-lg leading-tight mt-1">Wormhole protocols finalized for Andromeda?</h5>
+<p class="text-sm text-slate-500 mt-1">2.4k Yaps • Trending now</p>
+</div>
+<span class="material-symbols-outlined text-slate-600">chevron_right</span>
+</div>
+<div class="p-4 md:p-6 hover:bg-primary/10 transition-colors flex justify-between items-center cursor-pointer">
+<div>
+<p class="text-xs font-bold text-primary tracking-widest uppercase">Culture</p>
+<h5 class="font-bold text-base md:text-lg leading-tight mt-1">First Intergalactic Music Festival announced</h5>
+<p class="text-sm text-slate-500 mt-1">856 Yaps • Just started</p>
+</div>
+<span class="material-symbols-outlined text-slate-600">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Sidebar Content (Top Stations) -->
+<div class="lg:col-span-4 space-y-6">
+<div class="flex items-center justify-between">
+<h3 class="text-xl font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">groups</span>
+                            Top Stations
+                        </h3>
+</div>
+<!-- Station Cards Grid - adapts on mobile/tablet -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-4">
+<!-- Station Card 1 -->
+<div class="p-px rounded-2xl bg-gradient-to-br from-primary/30 to-fuchsia-600/30">
+<div class="bg-background-dark rounded-xl p-5 flex flex-col gap-4 h-full">
+<div class="flex items-center gap-3">
+<div class="h-12 w-12 rounded-xl bg-primary/20 flex items-center justify-center border border-primary/20 shrink-0">
+<span class="material-symbols-outlined text-primary">rocket</span>
+</div>
+<div class="min-w-0">
+<h4 class="font-bold truncate">Mars Pioneers</h4>
+<p class="text-xs text-slate-500">12.4k explorers</p>
+</div>
+</div>
+<p class="text-sm text-slate-400 line-clamp-2">Discussing the upcoming colonization efforts and atmospheric stabilization updates.</p>
+<button class="mt-auto w-full bg-primary/20 hover:bg-primary/30 text-primary font-bold py-2.5 rounded-lg transition-colors text-sm">Dock Now</button>
+</div>
+</div>
+<!-- Station Card 2 -->
+<div class="bg-primary/5 border border-primary/10 rounded-2xl p-5 flex flex-col gap-4 hover:border-primary/30 transition-all h-full">
+<div class="flex items-center gap-3">
+<div class="h-12 w-12 rounded-xl bg-fuchsia-500/20 flex items-center justify-center border border-fuchsia-500/20 shrink-0">
+<span class="material-symbols-outlined text-fuchsia-500">auto_stories</span>
+</div>
+<div class="min-w-0">
+<h4 class="font-bold truncate">Galactic Archives</h4>
+<p class="text-xs text-slate-500">8.1k archivists</p>
+</div>
+</div>
+<p class="text-sm text-slate-400 line-clamp-2">Preserving the history of the precursor civilizations through digital artifacts.</p>
+<button class="mt-auto w-full bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 font-bold py-2.5 rounded-lg transition-colors text-sm">Dock Now</button>
+</div>
+<!-- Station Card 3 -->
+<div class="bg-primary/5 border border-primary/10 rounded-2xl p-5 flex flex-col gap-4 hover:border-primary/30 transition-all h-full lg:block hidden xl:flex">
+<div class="flex items-center gap-3">
+<div class="h-12 w-12 rounded-xl bg-orange-500/20 flex items-center justify-center border border-orange-500/20 shrink-0">
+<span class="material-symbols-outlined text-orange-500">science</span>
+</div>
+<div class="min-w-0">
+<h4 class="font-bold truncate">Astrobiology Lab</h4>
+<p class="text-xs text-slate-500">5.5k researchers</p>
+</div>
+</div>
+<p class="text-sm text-slate-400 line-clamp-2">Sharing findings on non-carbon based lifeforms discovered in Titan's oceans.</p>
+<button class="mt-auto w-full bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 font-bold py-2.5 rounded-lg transition-colors text-sm">Dock Now</button>
+</div>
+</div>
+<!-- Mini Footer / Tags -->
+<div class="pt-6 border-t border-primary/10 flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-primary/10 text-primary text-[10px] uppercase font-black tracking-widest rounded-full cursor-pointer hover:bg-primary/20">Protocol</span>
+<span class="px-3 py-1 bg-primary/10 text-primary text-[10px] uppercase font-black tracking-widest rounded-full cursor-pointer hover:bg-primary/20">Terms</span>
+<span class="px-3 py-1 bg-primary/10 text-primary text-[10px] uppercase font-black tracking-widest rounded-full cursor-pointer hover:bg-primary/20">Help</span>
+<p class="w-full text-[10px] text-slate-500 mt-2 font-medium">© 2248 YapStation Galactic Operations.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

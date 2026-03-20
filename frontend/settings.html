@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>YapStation Settings - Galactic Edition</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#a855f7",
+                        "background-light": "#f7f5f8",
+                        "background-dark": "#191022",
+                        "surface": "#261a35",
+                        "border-subtle": "#362249",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="flex h-screen w-full overflow-hidden">
+<!-- Sidebar: Updated to match SCREEN_3 responsive behavior -->
+<aside class="w-20 lg:w-64 border-r border-primary/10 flex flex-col bg-background-light dark:bg-background-dark transition-all duration-300">
+<div class="p-6 flex items-center gap-3">
+<div class="h-10 w-10 rounded-xl bg-primary flex items-center justify-center text-white shadow-lg shadow-primary/20 shrink-0">
+<span class="material-symbols-outlined text-2xl">rocket_launch</span>
+</div>
+<div class="hidden md:block">
+<h1 class="text-lg font-bold tracking-tight text-slate-900 dark:text-slate-100 uppercase leading-tight">YapStation</h1>
+<p class="text-[10px] text-primary font-bold uppercase tracking-widest leading-none">Futuristic</p>
+</div>
+</div>
+<nav class="flex-1 px-3 space-y-1 mt-4">
+<a class="flex items-center gap-3 px-4 py-3 rounded-full text-slate-400 hover:bg-primary/10 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-medium hidden lg:block">Chats</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-full text-slate-400 hover:bg-primary/10 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">podcasts</span>
+<span class="font-medium hidden lg:block">YapStations</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-full text-slate-400 hover:bg-primary/10 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-medium hidden lg:block">Discover</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-full bg-primary text-white transition-all shadow-lg shadow-primary/20" href="#">
+<span class="material-symbols-outlined fill-1">settings</span>
+<span class="font-medium hidden lg:block">Settings</span>
+</a>
+</nav>
+<div class="p-4 mt-auto border-t border-primary/10">
+<div class="flex items-center gap-3 p-2 rounded-xl hover:bg-primary/5 transition-colors cursor-pointer">
+<div class="relative shrink-0">
+<div class="h-10 w-10 rounded-full bg-slate-200 dark:bg-slate-800 border border-primary/20 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="User profile avatar close up portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwxeka95UHqGeXVmUgHJ-frsa6PSKcIjws12OFwteVuVIO415FBLmGjFF8y0licG79ON4_sr07h5KrmEzZniZPHHmBBRqaHAoyK4QbNyT96Q7zr25l2eyIdT7-ERSYC_T4VWbHZGd_hEWEzXwmj9MgBex-9B8tQ3yAtYJNyjI9_jmaTmrQFp4kDVToWvHOkkLEPQeS1DrYS9-S2ZQUYYnILxOgBPpKrnUnBkTe696wTKXKAf-mQ1naYGaSlL0mEc0GOYsSYhPLe81c"/>
+</div>
+<div class="absolute bottom-0 right-0 h-3 w-3 bg-green-500 rounded-full border-2 border-background-dark"></div>
+</div>
+<div class="hidden md:block overflow-hidden">
+<p class="text-sm font-semibold truncate">Alex Vortex</p>
+<p class="text-xs text-slate-500 truncate">Online</p>
+</div>
+</div>
+<!-- Logout Button: Modified for smaller sidebar -->
+<button class="mt-4 flex items-center justify-center md:justify-start gap-3 w-full px-4 py-3 rounded-xl text-red-500 hover:bg-red-500/10 transition-colors">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-bold text-sm hidden md:block">Logout</span>
+</button>
+</div>
+</aside>
+<!-- Content Area -->
+<main class="flex-1 overflow-y-auto bg-background-light dark:bg-background-dark scroll-smooth">
+<!-- Top Header (Responsive) -->
+<header class="h-20 border-b border-primary/10 flex items-center justify-between px-6 md:px-8 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md sticky top-0 z-10">
+<div class="flex items-center gap-4 flex-1">
+<label class="hidden md:flex flex-1 max-w-md">
+<div class="flex w-full items-stretch rounded-xl h-10">
+<div class="text-slate-500 dark:text-primary/60 flex border-none bg-slate-200 dark:bg-primary/5 items-center justify-center pl-4 rounded-l-xl">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input flex w-full border-none bg-slate-200 dark:bg-primary/5 focus:ring-0 h-full placeholder:text-slate-500 dark:placeholder:text-primary/40 px-4 rounded-r-xl pl-2 text-sm" placeholder="Search systems..." value=""/>
+</div>
+</label>
+<!-- Mobile Search Icon -->
+<button class="md:hidden p-2 rounded-xl bg-slate-200 dark:bg-primary/5 text-slate-500">
+<span class="material-symbols-outlined">search</span>
+</button>
+</div>
+<div class="flex items-center gap-2 md:gap-4">
+<button class="flex items-center justify-center rounded-xl size-10 bg-slate-200 dark:bg-primary/5 hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA58E2Re8KYlhGIxYGpgUUpQzyKVQrmU-q-au8IHfTfoY_O7wP2hYzbdbR3T37v5ZEeWbZVHHItcCt82dBmmspu5Bgm3HYxF-cGKw24SEX51YIkG37uWB48rq73qapUdgg9T_tXgo7pPL65Eg2qicED67KOVo2ho1qIBTNMYGDzFNmZlSAE4CvrMw1QMvBnznhOQnc8jzsKEU_p4HWiH6SpYP1te4w3R7Y_HVsGkDHf6af6p_3Obdtat67t-yfup4554vxSdixs4abC");'></div>
+</div>
+</header>
+<div class="max-w-4xl mx-auto p-6 md:p-10 space-y-8 md:space-y-10">
+<!-- Header -->
+<div class="space-y-2">
+<h1 class="text-3xl md:text-4xl font-black tracking-tight text-slate-900 dark:text-white">Settings</h1>
+<p class="text-slate-500 dark:text-primary/60 text-sm md:text-base">Configure your interstellar presence and security protocols.</p>
+</div>
+<!-- Profile Settings -->
+<section class="bg-white dark:bg-surface rounded-xl border border-slate-200 dark:border-border-subtle p-5 md:p-8 space-y-6 md:space-y-8">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">person</span>
+<h2 class="text-xl font-bold">Profile Settings</h2>
+</div>
+<div class="flex flex-col lg:flex-row gap-8 items-center lg:items-start">
+<div class="relative group">
+<div class="size-32 md:size-40 rounded-full border-4 border-primary/20 p-1 bg-background-dark/50">
+<div class="size-full rounded-full bg-center bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBszTFL61BLOS9zHfHJGy6JpSC5HAPT6mM88kLexjfb5HDLB5q02A5UVc3nPQzgTR0aUouGTA-ail9x_qI8gou9dT0YKlXUKOgDptqnzOhTzrVPTsHOq4aPJdLp_jN4GVSXB7mSZSVsCTQwXTbS2_X_QA3xyBNsCQE0TMQ97S0WXS0Wpg3yINoY-LCdDt0j67byGLkOZQpJ_TdFHwd4uqC4bv2IkyUPry21I9wLdWyRhHP1nKuErZ1sukkbvSwZsseO_SFNQJ4KQt1u");'></div>
+</div>
+<button class="absolute bottom-1 right-1 md:bottom-2 md:right-2 bg-primary text-white p-2.5 rounded-full shadow-lg border-4 border-white dark:border-surface hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-sm font-bold">edit</span>
+</button>
+</div>
+<div class="flex-1 space-y-5 w-full">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+<div class="space-y-2">
+<label class="text-[10px] font-bold uppercase tracking-widest text-primary">Display Name</label>
+<input class="w-full bg-slate-50 dark:bg-background-dark/50 border-slate-200 dark:border-primary/10 rounded-xl focus:ring-primary focus:border-primary px-4 py-3 text-sm" type="text" value="Commander Yap"/>
+</div>
+<div class="space-y-2">
+<label class="text-[10px] font-bold uppercase tracking-widest text-primary">Email Address</label>
+<input class="w-full bg-slate-50 dark:bg-background-dark/50 border-slate-200 dark:border-primary/10 rounded-xl focus:ring-primary focus:border-primary px-4 py-3 text-sm" type="email" value="yap@starfleet.command"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-[10px] font-bold uppercase tracking-widest text-primary">Bio / Signature</label>
+<textarea class="w-full bg-slate-50 dark:bg-background-dark/50 border-slate-200 dark:border-primary/10 rounded-xl focus:ring-primary focus:border-primary px-4 py-3 text-sm min-h-[100px]" rows="3">Exploring the outer rim of the social galaxy. Yap often, yap loud.</textarea>
+</div>
+</div>
+</div>
+</section>
+<!-- Privacy -->
+<section class="bg-white dark:bg-surface rounded-xl border border-slate-200 dark:border-border-subtle p-5 md:p-8 space-y-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">security</span>
+<h2 class="text-xl font-bold">Privacy Protocols</h2>
+</div>
+<div class="divide-y divide-slate-100 dark:divide-primary/5">
+<div class="py-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div class="space-y-1">
+<p class="font-bold text-sm md:text-base">Visibility Level</p>
+<p class="text-xs md:text-sm text-slate-500 dark:text-primary/60">Who can see your online status and current sector.</p>
+</div>
+<select class="bg-slate-50 dark:bg-background-dark/50 border-slate-200 dark:border-primary/10 rounded-xl text-sm px-4 py-2 focus:ring-primary w-full sm:w-auto min-w-[140px]">
+<option>Public</option>
+<option selected="">Friends Only</option>
+<option>Incognito</option>
+</select>
+</div>
+<div class="py-5 flex items-center justify-between">
+<div class="space-y-1">
+<p class="font-bold text-sm md:text-base">Direct Transmissions</p>
+<p class="text-xs md:text-sm text-slate-500 dark:text-primary/60">Allow direct messages from other commanders.</p>
+</div>
+<button class="relative inline-flex h-6 w-11 shrink-0 items-center rounded-full bg-primary transition-colors">
+<span class="inline-block h-4 w-4 translate-x-6 rounded-full bg-white transition-transform"></span>
+</button>
+</div>
+<div class="py-5 flex items-center justify-between">
+<div class="space-y-1">
+<p class="font-bold text-sm md:text-base">Data Collection</p>
+<p class="text-xs md:text-sm text-slate-500 dark:text-primary/60">Help improve the station by sharing telemetry data.</p>
+</div>
+<button class="relative inline-flex h-6 w-11 shrink-0 items-center rounded-full bg-slate-300 dark:bg-primary/10 transition-colors">
+<span class="inline-block h-4 w-4 translate-x-1 rounded-full bg-white transition-transform"></span>
+</button>
+</div>
+</div>
+</section>
+<!-- Console Notifications -->
+<section class="bg-white dark:bg-surface rounded-xl border border-slate-200 dark:border-border-subtle p-5 md:p-8 space-y-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">vibration</span>
+<h2 class="text-xl font-bold">Console Notifications</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+<!-- Card 1 -->
+<div class="p-5 rounded-2xl border border-slate-100 dark:border-primary/10 bg-slate-50/50 dark:bg-background-dark/30 flex flex-col gap-5">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">priority_high</span>
+<p class="font-bold text-sm uppercase tracking-widest">Urgent Alerts</p>
+</div>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="relative flex items-center">
+<input checked="" class="peer h-5 w-5 rounded border-slate-300 dark:border-primary/30 text-primary focus:ring-primary bg-transparent transition-all" type="checkbox"/>
+</div>
+<span class="text-sm font-medium group-hover:text-primary transition-colors">Docking Permissions</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="relative flex items-center">
+<input checked="" class="peer h-5 w-5 rounded border-slate-300 dark:border-primary/30 text-primary focus:ring-primary bg-transparent transition-all" type="checkbox"/>
+</div>
+<span class="text-sm font-medium group-hover:text-primary transition-colors">Emergency Broadcasts</span>
+</label>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="p-5 rounded-2xl border border-slate-100 dark:border-primary/10 bg-slate-50/50 dark:bg-background-dark/30 flex flex-col gap-5">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">chat</span>
+<p class="font-bold text-sm uppercase tracking-widest">Social Comms</p>
+</div>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="relative flex items-center">
+<input checked="" class="peer h-5 w-5 rounded border-slate-300 dark:border-primary/30 text-primary focus:ring-primary bg-transparent transition-all" type="checkbox"/>
+</div>
+<span class="text-sm font-medium group-hover:text-primary transition-colors">Friend Requests</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="relative flex items-center">
+<input class="peer h-5 w-5 rounded border-slate-300 dark:border-primary/30 text-primary focus:ring-primary bg-transparent transition-all" type="checkbox"/>
+</div>
+<span class="text-sm font-medium group-hover:text-primary transition-colors">New Global Yap Alerts</span>
+</label>
+</div>
+</div>
+</div>
+</section>
+<!-- Actions (Responsive) -->
+<div class="flex flex-col-reverse sm:flex-row items-center justify-end gap-4 pt-6 md:pt-8 border-t border-primary/10">
+<button class="w-full sm:w-auto px-6 py-3 rounded-xl text-sm font-bold text-slate-500 hover:text-slate-900 dark:hover:text-white transition-colors">
+                        Reset to Default
+                    </button>
+<button class="w-full sm:w-auto px-10 py-3.5 rounded-xl bg-primary text-white font-bold shadow-lg shadow-primary/30 hover:brightness-110 active:scale-95 transition-all text-sm uppercase tracking-widest">
+                        Save Galaxy Changes
+                    </button>
+</div>
+</div>
+<!-- Bottom Spacer for mobile/tablet navigation comfort -->
+<div class="h-10 md:hidden"></div>
+</main>
+</div>
+</body></html>

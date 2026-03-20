@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#a855f7",
+                        "background-light": "#f7f5f8",
+                        "background-dark": "#191022",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>YapStation | Community Hub</title>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="flex min-h-screen">
+<!-- Sidebar Navigation -->
+<aside class="w-20 md:w-64 border-r border-primary/10 flex flex-col bg-background-light dark:bg-background-dark sticky top-0 h-screen">
+<div class="p-6 flex items-center gap-3">
+<div class="h-10 w-10 rounded-xl bg-primary flex items-center justify-center text-white shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-2xl">rocket_launch</span>
+</div>
+<div class="hidden md:block">
+<h1 class="text-lg font-bold tracking-tight text-slate-900 dark:text-slate-100">YapStation</h1>
+<p class="text-xs text-primary font-medium uppercase tracking-widest">Futuristic</p>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-2 mt-4">
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-primary/10 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-medium hidden md:block">Chats</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl bg-primary/20 text-primary transition-all" href="#">
+<span class="material-symbols-outlined">podcasts</span>
+<span class="font-medium hidden md:block">YapStations</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-primary/10 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-medium hidden md:block">Discover</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-primary/10 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-medium hidden md:block">Settings</span>
+</a>
+</nav>
+<div class="p-4 mt-auto border-t border-primary/10">
+<div class="flex items-center gap-3 p-2 rounded-xl hover:bg-primary/5 transition-colors cursor-pointer">
+<div class="relative">
+<div class="h-10 w-10 rounded-full bg-slate-200 dark:bg-slate-800 border border-primary/20 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="User profile avatar close up portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwxeka95UHqGeXVmUgHJ-frsa6PSKcIjws12OFwteVuVIO415FBLmGjFF8y0licG79ON4_sr07h5KrmEzZniZPHHmBBRqaHAoyK4QbNyT96Q7zr25l2eyIdT7-ERSYC_T4VWbHZGd_hEWEzXwmj9MgBex-9B8tQ3yAtYJNyjI9_jmaTmrQFp4kDVToWvHOkkLEPQeS1DrYS9-S2ZQUYYnILxOgBPpKrnUnBkTe696wTKXKAf-mQ1naYGaSlL0mEc0GOYsSYhPLe81c"/>
+</div>
+<div class="absolute bottom-0 right-0 h-3 w-3 bg-green-500 rounded-full border-2 border-background-dark"></div>
+</div>
+<div class="hidden md:block overflow-hidden">
+<p class="text-sm font-semibold truncate">Alex Vortex</p>
+<p class="text-xs text-slate-500 truncate">Online</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col min-w-0">
+<!-- Header -->
+<header class="h-16 border-b border-primary/10 flex items-center justify-between px-6 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md sticky top-0 z-10">
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2 lg:hidden">
+<span class="material-symbols-outlined text-primary">rocket_launch</span>
+<span class="font-bold">YapStation</span>
+</div>
+<div class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-500 dark:text-slate-400">
+<a class="text-primary border-b-2 border-primary pb-1" href="#">Global</a>
+<a class="hover:text-primary transition-colors" href="#">Local</a>
+<a class="hover:text-primary transition-colors" href="#">Trending</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 dark:text-slate-400 text-xl">search</span>
+<input class="bg-primary/5 border border-primary/10 rounded-xl pl-10 pr-4 py-2 text-sm focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none w-64" placeholder="Search universe..." type="text"/>
+</div>
+<button class="p-2 rounded-xl bg-primary/10 text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="size-8 rounded-full bg-primary/20 border border-primary/30 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="User profile avatar with neon colors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfnu6mlL91cniwBf_Nuhrtw-YBc5qJOcAVfuCt9Ei7qwsRsv0M-WnG1FQ41PH3QMwKA_xwqxVk77IB3XIqMjVSkzw7rMdPmOWzhrkxFvh4zY3qrnSgB37jSO4M8OAfoVgpfMYS2dA5kJFJv6Ao1XukUnFMRUat2zDakx7ZN3ouHiPHQDUwLlbOkHqNOslEf5vn-ff5lDyPv86R9iVHQAOxcdE6P2kjQMSJXhQJ8LOjnPbKuPZTTLJTLGsloom90q9OsFLcraeg2shN"/>
+</div>
+</div>
+</header>
+<!-- Group Content -->
+<div class="max-w-4xl mx-auto w-full p-4 lg:p-8 flex flex-col gap-8">
+<!-- Group Header Card -->
+<section class="relative rounded-xl overflow-hidden border border-primary/20 bg-primary/5">
+<div class="h-48 w-full bg-gradient-to-r from-background-dark via-primary/40 to-background-dark flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 opacity-30 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+<span class="material-symbols-outlined text-8xl text-white/20">hub</span>
+</div>
+<div class="px-6 pb-6 -mt-12 relative z-0">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="flex flex-col md:flex-row gap-6 items-start">
+<div class="size-24 rounded-2xl bg-background-dark border-4 border-background-dark shadow-xl overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Station official logo futuristic icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0Id265BO9g9UGFSA1Ks8xJZ3u8olPV35DQu1dPXY9WZzJMZWqy3SoyZq_57NBDZUiuZXpz8R0KTT1vcKdV4EHgCTYYlD-4JZZwQOJxMsNpXdhIjRRkBqq_ZfBoOecYYo2Vg9RxN2stYbIQMBowMHKVoE7ufXknp0RnfjEblREOfBdh6u5zDNAAQIdSNHO9024_Y1shSnOgNw8lheyWVMDVAEOkmvCpLD6Q5U0KCcghOHmMLG6W4Wg2_4yOyGnwe6O226TCXw9wEmt"/>
+</div>
+<div class="md:pb-2">
+<h2 class="text-3xl font-bold tracking-tight">YapStation Official</h2>
+<p class="text-slate-500 dark:text-slate-400 mt-1 max-w-lg">The ultimate hub for futuristic discussions, emerging tech, and digital explorers.</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-6 py-3 bg-primary/20 text-primary border border-primary/30 font-bold rounded-xl hover:bg-primary/30 transition-all">
+                                Request to Collaborate
+                            </button>
+<button class="px-8 py-3 bg-primary text-white font-bold rounded-xl shadow-lg shadow-primary/30 hover:scale-105 transition-transform">
+                                Join Station
+                            </button>
+<button class="p-3 rounded-xl border border-primary/20 bg-primary/5 text-primary hover:bg-primary/10">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+</div>
+<div class="mt-8 flex flex-wrap items-center gap-6 border-t border-primary/10 pt-6">
+<div class="flex items-center -space-x-3">
+<img class="size-9 rounded-full border-2 border-background-dark" data-alt="Member avatar 1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWgwc1kKs0_fZWnxCNQAyPW9F5nrZpcIgDQ1vsypN0uzH1drOVVYBPC0BuzQJKawg-mKh-Q2BfThEQU-Km_rjP8hNtkFkCLnddXapKevxEu6JVo6k77J__zY07R0zL5i8_hNm2B1AkUpCVYw4ccKCBL72jNilAsCbs3D2RzTcL9Oytbc7mcC4x8VSP50Z-Kqg2VnaVgGyls7HuId4GLtzgdkehVvlIx6650Pt7If8Pm3j9jEQpoM6gY3G2TgaHO9-fmiUgZRu3zGU0"/>
+<img class="size-9 rounded-full border-2 border-background-dark" data-alt="Member avatar 2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7qjAmURymNcv7yKAimHVjDQk-dJEmfKewZMBht1M84UrbvLLIpsW3z4Ym57e2kgAPIgSLdpzARAZ3NOexeYrr9qqzV2f5DgWk84cHYY1BdZax9UoGSCNVb5CxQEV6rRWtv5ljaqg6fuCMqQ-4foMLQzweSLYlFkc_p87gcBGp3blhomMFZC2DO2IqOiSjjwbJwv1f1EFKFMMoQX-eUSRN8-kKoToAZxQQcGp8fAqDVTNyEqp2D8nAUy1l-PtBrnMbeZ_2PSohvsA2"/>
+<img class="size-9 rounded-full border-2 border-background-dark" data-alt="Member avatar 3" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvJcZFm87UlTnsRN0xV7dmiMaUfp4kFnYb4xK9Si1kRU3pKWSIVwrFxJkMAtZIOSiII5tpkRopkOKXa7X_1xPmK3GxVvSSjPXOzmVaWPbC4EjzViOekPdYU1UY8N_3hre0yFA2fI8pqGkN-hiDHLRn2Up4A8rn6DfMrk32eYIg2LB88Dcf-He2c4McRvmjmJ6Zq38DReJFpLk0hkZ4SEvzX5h-HN0YBF4QeMfGstwrrWT7IOroFnIdC-3jYSXH88bix7hGc09Cj_Hd"/>
+<div class="size-9 rounded-full border-2 border-background-dark bg-primary/20 flex items-center justify-center text-[10px] font-bold text-primary">
+                                +12K
+                            </div>
+</div>
+<div class="text-sm font-medium">
+<span class="text-slate-900 dark:text-slate-100">12,432 Members</span>
+<span class="mx-2 text-primary">•</span>
+<span class="text-primary">1,208 Online</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Tabs Navigation -->
+<div class="flex border-b border-primary/10 gap-8 px-2">
+<button class="pb-4 border-b-2 border-primary text-primary font-bold">Feed</button>
+<button class="pb-4 border-b-2 border-transparent text-slate-500 hover:text-primary transition-colors font-medium">Events</button>
+<button class="pb-4 border-b-2 border-transparent text-slate-500 hover:text-primary transition-colors font-medium">Media</button>
+<button class="pb-4 border-b-2 border-transparent text-slate-500 hover:text-primary transition-colors font-medium">About</button>
+</div>
+<!-- Feed Content -->
+<div class="flex flex-col gap-6">
+<!-- Create Post Placeholder -->
+<div class="bg-primary/5 border border-primary/10 rounded-xl p-4 flex gap-4 items-center">
+<div class="size-10 rounded-full bg-primary/20 shrink-0"></div>
+<input class="bg-transparent border-none focus:ring-0 w-full text-slate-300" placeholder="What's happening in the station?" type="text"/>
+<button class="p-2 text-primary hover:bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined">image</span>
+</button>
+</div>
+<!-- Feed Card 1 -->
+<article class="bg-background-light dark:bg-background-dark/30 border border-primary/10 rounded-xl p-5 flex flex-col gap-4 shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<img class="size-10 rounded-full" data-alt="User avatar for post" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTH-8jIf0tbvoc3xZMKs8flMCzPz7rZREPqYR5ayn89_7QvUskrEsesBg4gl6QHckvWQeRiKtC1nvxZt4CbTQWd3PhaYqU3_dPWDQ4FBtH7Ghu5xaZnhhsQCxqsldXNCyDwhu8-BgGIKL2R8cy8UqtnvK2-c0cw12uTU6Fks5cdd_MZ3Ne1C0Uo7jymGfr6rTO-7uT3i23eTbuJ5DZDOpqeirjv6DbvSbwhS0E5BaIWUmpn2A0cWxMd8IlTsJqTEd9CjBgYeXnP07b"/>
+<div>
+<h4 class="font-bold text-sm">NeonKnight</h4>
+<p class="text-xs text-slate-500">2 hours ago</p>
+</div>
+</div>
+<button class="text-slate-500 hover:text-primary"><span class="material-symbols-outlined">more_horiz</span></button>
+</div>
+<p class="text-slate-700 dark:text-slate-300 leading-relaxed">
+                        Just finished the latest workshop on neural-link UI design. The possibilities of spatial computing are expanding faster than we expected! 🚀
+                    </p>
+<div class="rounded-xl overflow-hidden border border-primary/10">
+<img class="w-full aspect-video object-cover" data-alt="Futuristic neural link UI mockup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMrr5attAcg27DiBIaIyiPyFkNpSyrtfwVCWXJ-h--uMJZ4kzCoKs0euJsNfRbABTFYxTCbE_Wx-WBONO6GNkNItitX1PJL_v1Ib3-5PpmdFN6DgFm9cBl5WEHEu3dMAhyD8wlHIpuH3B1P7fEXOOmAcIlAyslwMBbmtsj7rjSbPN68iCplx4_Jow8CbBtc6ckO7HKIh2LUAkZdOE8mTeE4kxuE0cNHK89SnMZp11JEyqYW0QBB6P_YRr8n2EdnuWz2jUqjng1kFEE"/>
+</div>
+<div class="flex items-center gap-6 pt-2 border-t border-primary/5">
+<button class="flex items-center gap-2 text-slate-500 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+<span class="text-sm font-medium">428</span>
+</button>
+<button class="flex items-center gap-2 text-slate-500 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">chat_bubble</span>
+<span class="text-sm font-medium">56</span>
+</button>
+<button class="flex items-center gap-2 text-slate-500 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">ios_share</span>
+<span class="text-sm font-medium">12</span>
+</button>
+</div>
+</article>
+<!-- Feed Card 2 -->
+<article class="bg-background-light dark:bg-background-dark/30 border border-primary/10 rounded-xl p-5 flex flex-col gap-4 shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<img class="size-10 rounded-full" data-alt="Another user avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMZ3xN5JITIJjqatS0zEkj43WA79EgMb75yB7X4TPWrcE8Yca-je0ca4WMMvTnkNBHmfW2GJUFvUMKHxJGoc0iRBoFRnLErXeSVN0Gwb8dyVwk9qF7vPfcYFeeQtWBN6bHn98AZGsRwOPiax-nVsOvMMTH1lPcIuyf2EB0P516ipAr7wj2ooAvp8GGXNkY2bfOVJ3jMVcJGq5_H3a9AwoyBntO8GhRTsHMFxZqaIsIo3lDOE2O4ZNnupIy0b1LH9wn8C9PgOIMlEPM"/>
+<div>
+<h4 class="font-bold text-sm">EtherFlow</h4>
+<p class="text-xs text-slate-500">5 hours ago</p>
+</div>
+</div>
+<button class="text-slate-500 hover:text-primary"><span class="material-symbols-outlined">more_horiz</span></button>
+</div>
+<p class="text-slate-700 dark:text-slate-300 leading-relaxed">
+                        Who's joining the Global Stations Meetup tomorrow? We'll be discussing the decentralization of digital identities.
+                    </p>
+<div class="flex items-center gap-6 pt-2 border-t border-primary/5">
+<button class="flex items-center gap-2 text-primary transition-colors">
+<span class="material-symbols-outlined text-xl fill-1">favorite</span>
+<span class="text-sm font-medium">1.2K</span>
+</button>
+<button class="flex items-center gap-2 text-slate-500 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">chat_bubble</span>
+<span class="text-sm font-medium">124</span>
+</button>
+<button class="flex items-center gap-2 text-slate-500 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">ios_share</span>
+<span class="text-sm font-medium">89</span>
+</button>
+</div>
+</article>
+</div>
+</div>
+</main>
+<!-- Right Sidebar (Trends) -->
+<aside class="w-80 border-l border-primary/10 bg-background-light dark:bg-background-dark/50 hidden xl:flex flex-col sticky top-0 h-screen p-6 gap-8">
+<section class="bg-primary/5 rounded-xl p-5 border border-primary/10">
+<h3 class="font-bold text-lg mb-4">Trending Stations</h3>
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-emerald-500/20 text-emerald-500 flex items-center justify-center">
+<span class="material-symbols-outlined">data_object</span>
+</div>
+<div>
+<p class="font-bold text-sm">CodeNexus</p>
+<p class="text-xs text-slate-500">4.5k active</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-orange-500/20 text-orange-500 flex items-center justify-center">
+<span class="material-symbols-outlined">palette</span>
+</div>
+<div>
+<p class="font-bold text-sm">SynthArt</p>
+<p class="text-xs text-slate-500">2.1k active</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-blue-500/20 text-blue-500 flex items-center justify-center">
+<span class="material-symbols-outlined">bolt</span>
+</div>
+<div>
+<p class="font-bold text-sm">ZeroLatency</p>
+<p class="text-xs text-slate-500">890 active</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-4 text-primary text-sm font-bold py-2 border border-primary/20 rounded-lg hover:bg-primary/5">Show More</button>
+</section>
+<section class="bg-primary/5 rounded-xl p-5 border border-primary/10">
+<h3 class="font-bold text-lg mb-4">Upcoming Events</h3>
+<div class="flex flex-col gap-4">
+<div class="flex flex-col gap-1">
+<p class="text-xs font-bold text-primary uppercase">Tomorrow • 18:00</p>
+<p class="font-medium text-sm">AI Governance Summit</p>
+<p class="text-xs text-slate-500">423 people attending</p>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-xs font-bold text-primary uppercase">Friday • 21:00</p>
+<p class="font-medium text-sm">Neon Beats Live Stream</p>
+<p class="text-xs text-slate-500">1.2k people attending</p>
+</div>
+</div>
+</section>
+</aside>
+</div>
+</body></html>
