@@ -1,31 +1,28 @@
 #pragma once
 
 //Includes
-#include "Person.hpp"
+#include "../Database.hpp"
+#include <stdexcept>
+#include <string>
+#include <vector>
 
-class User : public Person {
+using namespace std;
+
+class User {
 private:
-    //Attributes
-    string userName;
-    string email;
-    string password;
-    string bio;
+    //Database Instance
+    Database& database;
 
 public:
     //Constructor
-    User(string firstName = "", string lastName = "", string gender = "", string userName = "", string email = "", string password = "", string bio = "");
+    User(Database& db);
 
-    //Getters
-    string getUserName() const;
-    string getEmail() const;
-    string getPassword() const;
-    string getBio() const;
+    //Register User
+    bool registerUser(string fn, string ln, string gender, string uname, string email, string pass);
 
-    //Setters
-    void setUserName(string userName);
-    void setBio(string bio);
+    //User Login
+    bool login(string uname, string pass);
 
-    //Functionality
-    bool login(string password);
-    void logout();
+    //Getting All Users
+    vector<string> getAllUsers();
 };

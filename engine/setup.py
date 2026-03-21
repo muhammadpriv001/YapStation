@@ -10,7 +10,8 @@ ext_modules = [
 
             #IMPLEMENTED MODULES
             "user/User.cpp",
-            "user/Person.cpp",
+            "messaging/Conversation.cpp",
+            "messaging/Message.cpp",
             "../database/Database.cpp",
 
             #SQLite

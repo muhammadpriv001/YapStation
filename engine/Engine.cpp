@@ -1,12 +1,13 @@
-//Includes
 #include "Engine.hpp"
-#include "user/User.hpp"
-#include "station/Station.hpp"
-#include "content/Post.hpp"
-#include "sqlite3.h"
 
-//Constructor
-Engine::Engine() : db("yap.db") {
+using namespace std;
+
+// ======================
+// CONSTRUCTOR
+// ======================
+
+Engine::Engine() : db("yap.db"), user(db), conversation(db), message(db) {
+
     db.execute(
         "CREATE TABLE IF NOT EXISTS users ("
         "firstName TEXT,"
@@ -17,45 +18,92 @@ Engine::Engine() : db("yap.db") {
         "password TEXT,"
         "bio TEXT);"
     );
+
+    db.execute(
+        "CREATE TABLE IF NOT EXISTS conversations ("
+        "id INTEGER PRIMARY KEY AUTOINCREMENT,"
+        "name TEXT,"
+        "is_group INTEGER);"
+    );
+
+    db.execute(
+        "CREATE TABLE IF NOT EXISTS conversation_users ("
+        "id INTEGER PRIMARY KEY AUTOINCREMENT,"
+        "conversation_id INTEGER NOT NULL,"
+        "username TEXT NOT NULL,"
+        "UNIQUE(conversation_id, username)"
+        ");"
+    );
+
+    db.execute(
+        "CREATE TABLE IF NOT EXISTS messages ("
+        "id INTEGER PRIMARY KEY AUTOINCREMENT,"
+        "conversation_id INTEGER,"
+        "sender_username TEXT,"
+        "content TEXT,"
+        "type TEXT,"
+        "media_path TEXT,"
+        "timestamp INTEGER);"
+    );
 }
 
-void Engine::registerUser(string fn, string ln, string uname, string gender, string email, string pass) {
-    //Check if username exists
-    string checkQuery = "SELECT username FROM users WHERE username='" + uname + "';";
+// ======================
+// AUTH
+// ======================
 
-    sqlite3_stmt* stmt;
-    sqlite3_prepare_v2(db.get(), checkQuery.c_str(), -1, &stmt, 0);
-
-    if(sqlite3_step(stmt) == SQLITE_ROW) {
-        sqlite3_finalize(stmt);
-        throw runtime_error("Username already exists");
-    }
-
-    sqlite3_finalize(stmt);
-
-    //Insert user
-    string query = "INSERT INTO users (firstName, lastName, gender, username, email, password, bio) VALUES ('" + fn + "','" + ln + "','" + gender + "','" + uname + "','" + email + "','" + pass + "','');";
-
-    db.execute(query);
+//User Registration
+void Engine::registerUser(string fn, string ln, string gender, string uname, string email, string pass) {
+    user.registerUser(fn, ln, gender, uname, email, pass);
 }
 
-bool Engine::login(string uname, string pass) {
-    string query = "SELECT password FROM users WHERE username='" + uname + "';";
+//User Login
+bool Engine::login(string username, string password) {
+    return user.login(username, password);
+}
 
-    sqlite3_stmt* stmt;
-    sqlite3_prepare_v2(db.get(), query.c_str(), -1, &stmt, 0);
+// ======================
+// USERS
+// ======================
 
-    bool success = false;
+//Getting All Users
+vector<string> Engine::getAllUsers() {
+    return user.getAllUsers();
+}
 
-    if (sqlite3_step(stmt) == SQLITE_ROW) {
-        string dbPass = (const char*)sqlite3_column_text(stmt, 0);
-        User temp("", "", uname, "", dbPass, "");
+// ======================
+// CONVERSATIONS
+// ======================
 
-        if (temp.login(pass)) {
-            success = true;
-        }
-    }
+//Creating Conversations
+int Engine::createConversation(vector<string> users, bool isGroup, string name) {
+    return conversation.createConversation(users, isGroup, name);
+}
 
-    sqlite3_finalize(stmt);
-    return success;
+//Getter User Conversations
+vector<string> Engine::getUserConversations(string username) {
+    return conversation.getUserConversations(username);
+}
+
+//Getter Conversation Users
+vector<string> Engine::getConversationUsers(int conversationId) {
+    return conversation.getConversationUsers(conversationId);
+}
+
+//Finder Conversations
+int Engine::findConversation(vector<string> users) {
+    return conversation.findConversation(users);
+}
+
+// ======================
+// MESSAGES
+// ======================
+
+//Send Message
+void Engine::sendMessage(string sender, int conversationId, string content, string type, string mediaPath) {
+    message.sendMessage(sender, conversationId, content, type, mediaPath);
+}
+
+//Getting Message
+vector<string> Engine::getMessages(int convoId) {
+    return message.getMessages(convoId);
 }

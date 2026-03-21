@@ -13,13 +13,13 @@ private:
 
 public:
     //Constructor
-    Database(string dbName);
+    Database(const string& dbName);
 
     //Destructor
     ~Database();
 
     //INSERT Query
-    bool execute(const string& query);
+    void execute(const string& query);
 
     //FETCH Query
     sqlite3* get();

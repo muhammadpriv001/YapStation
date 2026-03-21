@@ -1,164 +1,169 @@
 <!DOCTYPE html>
 
-<html class="dark" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-    tailwind.config = {
+<html class="dark" lang="en">
+  <head>
+    <script>
+      if (!localStorage.getItem("username")) {
+        window.location.replace("/");
+      }
+    </script>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    
+    <script id="tailwind-config">
+      tailwind.config = {
         darkMode: "class",
         theme: {
             extend: {
-                colors: {
-                    "primary": "#a855f7",
-                    "background-light": "#f7f5f8",
-                    "background-dark": "#191022",
-                },
-                fontFamily: {
-                    "display": ["Space Grotesk"]
-                },
-                borderRadius: {
-                    "DEFAULT": "0.5rem",
-                    "lg": "1rem",
-                    "xl": "1.5rem",
-                    "full": "9999px"
-                },
+              colors: {
+                "primary": "#a855f7",
+                "background-light": "#f7f5f8",
+                "background-dark": "#191022",
+              },
+              fontFamily: {
+                "display": ["Space Grotesk"]
+              },
+              borderRadius: {
+                "DEFAULT": "0.5rem",
+                "lg": "1rem",
+                "xl": "1.5rem",
+                "full": "9999px"
+              },
             },
         },
-    }
-</script>
-<title>YapStation | Join the Future</title>
-</head>
-<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen antialiased">
-<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
-<div class="layout-container flex h-full grow flex-col">
-<header class="h-20 flex items-center justify-between whitespace-nowrap border-b border-primary/10 px-6 lg:px-20 bg-background-light dark:bg-background-dark">
-<div class="flex items-center gap-3">
-<div class="h-10 w-10 rounded-xl bg-primary flex items-center justify-center text-white shadow-lg shadow-primary/20">
-<span class="material-symbols-outlined text-2xl">rocket_launch</span>
-</div>
-<div>
-<h1 class="text-lg font-bold tracking-tight text-slate-900 dark:text-slate-100">YapStation</h1>
-<p class="text-xs text-primary font-medium uppercase tracking-widest">Futuristic</p>
-</div>
-</div>
-<div class="flex items-center gap-4">
-<button class="flex items-center justify-center rounded-xl h-10 w-10 bg-primary/10 text-primary border border-primary/20">
-<span class="material-symbols-outlined">dark_mode</span>
-</button>
-<div class="bg-primary/20 border border-primary/40 rounded-full size-10 flex items-center justify-center overflow-hidden">
-<img alt="User Avatar" class="w-full h-full object-cover" data-alt="Futuristic purple geometric user profile avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBG2FDth76ihXs7ZlNIHzmqMduCWZRUAanRqK47ba-3rk3kGgq3re_S7BfWZPT1nPHLHlokmX4HoDlwTdT3sXNfCZWgF47S88plMSaC4wJ3YuV3-yeQ1kRgz1-0-owb4NZ6SYNf_GEEiicQ-kJEsNNGj-KjRC7sh90WoRQVdAJfx78K0K5c7NoLDj_bKEGolEznMoJzuAUQijBvz3VGSj8pSqOAkengWlu1zvxr0JHEhzmSBf5DsEwVSYxRf9dZZsHcR8jUWoxoleD1"/>
-</div>
-</div>
-</header>
-<main class="flex-1 flex items-center justify-center p-6 bg-white/50 dark:bg-background-dark/50 backdrop-blur-sm relative">
-<!-- Background Decoration -->
-<div class="absolute inset-0 overflow-hidden pointer-events-none">
-<div class="absolute -top-[10%] -right-[10%] w-[40%] h-[40%] bg-primary/5 blur-[120px] rounded-full"></div>
-<div class="absolute -bottom-[10%] -left-[10%] w-[40%] h-[40%] bg-primary/5 blur-[120px] rounded-full"></div>
-</div>
-<div class="w-full max-w-[520px] bg-white dark:bg-primary/5 backdrop-blur-xl p-8 rounded-3xl border border-primary/10 shadow-2xl relative z-10">
-<div class="flex flex-col gap-2 mb-8">
-<div class="flex items-center justify-between">
-<h1 class="text-slate-900 dark:text-white text-3xl font-bold tracking-tight">Join YapStation</h1>
-<a href="/" class="flex items-center gap-1 text-primary hover:text-primary/80 text-sm font-semibold transition-colors">
-    <span class="material-symbols-outlined text-lg">arrow_back</span>
-    <span>Back to Login</span>
-</a>
-</div>
-<p class="text-slate-500 dark:text-slate-400 text-base">Initialize your futuristic identity today.</p>
-</div>
-<form id="registerForm" class="flex flex-col gap-5">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-<label class="flex flex-col gap-2">
-<span class="text-sm font-semibold px-1 text-slate-700 dark:text-slate-300">First Name</span>
-<input class="form-input w-full rounded-xl border-primary/10 bg-slate-100 dark:bg-primary/5 focus:border-primary focus:ring-2 focus:ring-primary/20 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 h-12 transition-all outline-none border-none" placeholder="Hideo" type="text"/>
-</label>
-<label class="flex flex-col gap-2">
-<span class="text-sm font-semibold px-1 text-slate-700 dark:text-slate-300">Last Name</span>
-<input class="form-input w-full rounded-xl border-primary/10 bg-slate-100 dark:bg-primary/5 focus:border-primary focus:ring-2 focus:ring-primary/20 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 h-12 transition-all outline-none border-none" placeholder="Kojima" type="text"/>
-</label>
-</div>
-<label class="flex flex-col gap-2">
-<span class="text-sm font-semibold px-1 text-slate-700 dark:text-slate-300">Username</span>
-<div class="relative flex items-center">
-<span class="material-symbols-outlined absolute left-4 text-slate-400 dark:text-slate-500">alternate_email</span>
-<input class="form-input w-full pl-12 rounded-xl border-primary/10 bg-slate-100 dark:bg-primary/5 focus:border-primary focus:ring-2 focus:ring-primary/20 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 h-12 transition-all outline-none border-none" placeholder="cyberpunk_2077" type="text"/>
-</div>
-</label>
-<label class="flex flex-col gap-2">
-<span class="text-sm font-semibold px-1 text-slate-700 dark:text-slate-300">Email Address</span>
-<div class="relative flex items-center">
-<span class="material-symbols-outlined absolute left-4 text-slate-400 dark:text-slate-500">mail</span>
-<input class="form-input w-full pl-12 rounded-xl border-primary/10 bg-slate-100 dark:bg-primary/5 focus:border-primary focus:ring-2 focus:ring-primary/20 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 h-12 transition-all outline-none border-none" placeholder="nexus@orbit.station" type="email"/>
-</div>
-</label>
-<label class="flex flex-col gap-2">
-<span class="text-sm font-semibold px-1 text-slate-700 dark:text-slate-300">Password</span>
-<div class="relative flex items-center">
-<span class="material-symbols-outlined absolute left-4 text-slate-400 dark:text-slate-500">lock</span>
-<input class="form-input w-full pl-12 pr-12 rounded-xl border-primary/10 bg-slate-100 dark:bg-primary/5 focus:border-primary focus:ring-2 focus:ring-primary/20 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 h-12 transition-all outline-none border-none" placeholder="••••••••••••" type="password"/>
-<button class="absolute right-4 text-slate-400 hover:text-primary transition-colors" type="button">
-<span class="material-symbols-outlined">visibility</span>
-</button>
-</div>
-</label>
-<div class="flex flex-col gap-2">
-  <span class="text-sm font-semibold px-1 text-slate-700 dark:text-slate-300">
-    Gender
-  </span>
-  
-  <div class="flex items-center justify-center gap-6 px-2">
-    
-    <label class="flex items-center gap-2 cursor-pointer">
-      <input type="radio" name="gender" value="male"
-        class="text-primary focus:ring-primary bg-transparent border-primary/40"/>
-      <span class="text-sm text-slate-700 dark:text-slate-300">Male</span>
-    </label>
+      }
+    </script>
 
-    <label class="flex items-center gap-2 cursor-pointer">
-      <input type="radio" name="gender" value="female"
-        class="text-primary focus:ring-primary bg-transparent border-primary/40"/>
-      <span class="text-sm text-slate-700 dark:text-slate-300">Female</span>
-    </label>
+    <title>
+      YapStation | Join the Future
+    </title>
+  </head>
 
-    <label class="flex items-center gap-2 cursor-pointer">
-      <input type="radio" name="gender" value="other"
-        class="text-primary focus:ring-primary bg-transparent border-primary/40"/>
-      <span class="text-sm text-slate-700 dark:text-slate-300">Other</span>
-    </label>
-
-  </div>
-</div>
-<div class="flex items-center gap-3 py-2">
-<input class="rounded border-primary/40 text-primary focus:ring-primary bg-transparent" id="terms" type="checkbox"/>
-<label class="text-xs text-slate-500 dark:text-slate-400" for="terms">
-                            I agree to the <a class="text-primary hover:underline font-semibold" href="#">Neural Terms of Service</a> and <a class="text-primary hover:underline font-semibold" href="#">Data Privacy Protocol</a>.
-                        </label>
-</div>
-<button class="group relative flex w-full items-center justify-center overflow-hidden rounded-xl bg-primary px-6 py-4 text-white font-bold tracking-wider transition-all hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background-dark shadow-lg shadow-primary/20 mt-4" type="submit">
-<span class="relative z-10 flex items-center gap-2">
-                            CREATE ACCOUNT
-                            <span class="material-symbols-outlined text-xl">rocket_launch</span>
-</span>
-</button>
-</form>
-<p class="mt-8 text-center text-sm text-slate-500 dark:text-slate-400">
-    Already part of the network?
-    <a href="/" class="font-bold text-primary hover:underline">
-        Sync existing profile
-    </a>
-</p>
-</div>
-</main>
-<footer class="p-8 text-center border-t border-primary/10 bg-background-light dark:bg-background-dark">
-<p class="text-[10px] text-slate-400 dark:text-slate-500 font-bold uppercase tracking-[0.3em]">
-                © 2077 YAPSTATION INC. // ALL SYSTEMS NOMINAL // SECTOR 7G
+  <body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen antialiased">
+    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+      <div class="layout-container flex h-full grow flex-col">
+        <header class="h-20 flex items-center justify-between whitespace-nowrap border-b border-primary/10 px-6 lg:px-20 bg-background-light dark:bg-background-dark">
+          <div class="flex items-center gap-3">
+            <div class="h-10 w-10 rounded-xl bg-primary flex items-center justify-center text-white shadow-lg shadow-primary/20">
+              <span class="material-symbols-outlined text-2xl">
+                rocket_launch
+              </span>
+            </div>
+            <div>
+              <h1 class="text-lg font-bold tracking-tight text-slate-900 dark:text-slate-100">
+                YapStation
+              </h1>
+              <p class="text-xs text-primary font-medium uppercase tracking-widest">
+                Futuristic
+              </p>
+            </div>
+          </div>
+        </header>
+      <main class="flex-1 flex items-center justify-center p-6 bg-white/50 dark:bg-background-dark/50 backdrop-blur-sm relative">
+          <!-- Background Decoration -->
+          <div class="absolute inset-0 overflow-hidden pointer-events-none">
+          <div class="absolute -top-[10%] -right-[10%] w-[40%] h-[40%] bg-primary/5 blur-[120px] rounded-full"></div>
+          <div class="absolute -bottom-[10%] -left-[10%] w-[40%] h-[40%] bg-primary/5 blur-[120px] rounded-full"></div></div>
+          <div class="w-full max-w-[520px] bg-white dark:bg-primary/5 backdrop-blur-xl p-8 rounded-3xl border border-primary/10 shadow-2xl relative z-10">
+            <div class="flex flex-col gap-2 mb-8">
+              <div class="flex items-center justify-between">
+                <h1 class="text-slate-900 dark:text-white text-3xl font-bold tracking-tight">Join YapStation</h1>
+                <a href="/" class="flex items-center gap-1 text-primary hover:text-primary/80 text-sm font-semibold transition-colors">
+                  <span class="material-symbols-outlined text-lg">arrow_back</span>
+                  <span>Back to Login</span>
+                </a>
+              </div>
+              <p class="text-slate-500 dark:text-slate-400 text-base">Initialize your futuristic identity today.</p>
+            </div>
+            <form id="registerForm" class="flex flex-col gap-5">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <label class="flex flex-col gap-2">
+                  <span class="text-sm font-semibold px-1 text-slate-700 dark:text-slate-300">First Name</span>
+                  <input class="form-input w-full rounded-xl border-primary/10 bg-slate-100 dark:bg-primary/5 focus:border-primary focus:ring-2 focus:ring-primary/20 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 h-12 transition-all outline-none border-none" placeholder="Hideo" type="text"/>
+                </label>
+                <label class="flex flex-col gap-2">
+                  <span class="text-sm font-semibold px-1 text-slate-700 dark:text-slate-300">Last Name</span>
+                  <input class="form-input w-full rounded-xl border-primary/10 bg-slate-100 dark:bg-primary/5 focus:border-primary focus:ring-2 focus:ring-primary/20 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 h-12 transition-all outline-none border-none" placeholder="Kojima" type="text"/>
+                </label>
+              </div>
+            <label class="flex flex-col gap-2">
+              <span class="text-sm font-semibold px-1 text-slate-700 dark:text-slate-300">Username</span>
+              <div class="relative flex items-center">
+                <span class="material-symbols-outlined absolute left-4 text-slate-400 dark:text-slate-500">alternate_email</span>
+                <input class="form-input w-full pl-12 rounded-xl border-primary/10 bg-slate-100 dark:bg-primary/5 focus:border-primary focus:ring-2 focus:ring-primary/20 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 h-12 transition-all outline-none border-none" placeholder="cyberpunk_2077" type="text"/>
+              </div>
+            </label>
+              <label class="flex flex-col gap-2">
+                <span class="text-sm font-semibold px-1 text-slate-700 dark:text-slate-300">Email Address</span>
+                <div class="relative flex items-center">
+                  <span class="material-symbols-outlined absolute left-4 text-slate-400 dark:text-slate-500">mail</span>
+                  <input class="form-input w-full pl-12 rounded-xl border-primary/10 bg-slate-100 dark:bg-primary/5 focus:border-primary focus:ring-2 focus:ring-primary/20 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 h-12 transition-all outline-none border-none" placeholder="nexus@orbit.station" type="email"/>
+                </div>
+              </label>
+              <label class="flex flex-col gap-2">
+                <span class="text-sm font-semibold px-1 text-slate-700 dark:text-slate-300">Password</span>
+                <div class="relative flex items-center">
+                  <span class="material-symbols-outlined absolute left-4 text-slate-400 dark:text-slate-500">lock</span>
+                  <input class="form-input w-full pl-12 pr-12 rounded-xl border-primary/10 bg-slate-100 dark:bg-primary/5 focus:border-primary focus:ring-2 focus:ring-primary/20 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 h-12 transition-all outline-none border-none" placeholder="••••••••••••" type="password"/>
+                  <button class="absolute right-4 text-slate-400 hover:text-primary transition-colors" type="button">
+                  <span class="material-symbols-outlined">visibility</span>
+                </button>
+                </div>
+              </label>
+              <div class="flex flex-col gap-2">
+                <span class="text-sm font-semibold px-1 text-slate-700 dark:text-slate-300">Gender</span>
+                <div class="flex items-center justify-center gap-6 px-2">
+                  <label class="flex items-center gap-2 cursor-pointer">
+                    <input type="radio" name="gender" value="male"
+                    class="text-primary focus:ring-primary bg-transparent border-primary/40"/>
+                    <span class="text-sm text-slate-700 dark:text-slate-300">Male</span>
+                  </label>
+                  <label class="flex items-center gap-2 cursor-pointer">
+                    <input type="radio" name="gender" value="female"
+                    class="text-primary focus:ring-primary bg-transparent border-primary/40"/>
+                    <span class="text-sm text-slate-700 dark:text-slate-300">Female</span>
+                  </label>
+                  <label class="flex items-center gap-2 cursor-pointer">
+                    <input type="radio" name="gender" value="other"
+                    class="text-primary focus:ring-primary bg-transparent border-primary/40"/>
+                    <span class="text-sm text-slate-700 dark:text-slate-300">Other</span>
+                  </label>
+                </div>
+              </div>
+              <div class="flex items-center gap-3 py-2">
+                <input class="rounded border-primary/40 text-primary focus:ring-primary bg-transparent" id="terms" type="checkbox"/>
+                <label class="text-xs text-slate-500 dark:text-slate-400" for="terms">
+                      I agree to the <a class="text-primary hover:underline font-semibold" href="#">Neural Terms of Service</a> and <a class="text-primary hover:underline font-semibold" href="#">Data Privacy Protocol</a>.
+                </label>
+              </div>
+              <button class="group relative flex w-full items-center justify-center overflow-hidden rounded-xl bg-primary px-6 py-4 text-white font-bold tracking-wider transition-all hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background-dark shadow-lg shadow-primary/20 mt-4" type="submit">
+                <span class="relative z-10 flex items-center gap-2">
+                  CREATE ACCOUNT
+                  <span class="material-symbols-outlined text-xl">
+                    rocket_launch
+                  </span>
+                </span>
+              </button>
+            </form>
+            <p class="mt-8 text-center text-sm text-slate-500 dark:text-slate-400">
+              Already part of the network?
+              <a href="/" class="font-bold text-primary hover:underline">Sync existing profile</a>
             </p>
-</footer>
-</div>
-</div>
-<script defer src="/static/app.js"></script>
-</body></html>
+          </div>
+        </main>
+
+        <footer class="p-8 text-center border-t border-primary/10 bg-background-light dark:bg-background-dark">
+          <p class="text-[10px] text-slate-400 dark:text-slate-500 font-bold uppercase tracking-[0.3em]">
+            © 2077 YAPSTATION INC. // ALL SYSTEMS NOMINAL // SECTOR 7G
+          </p>
+        </footer>
+      </div>
+    </div>
+
+  <script defer src="/static/assets/scripts/authGuard.js"></script>
+  <script defer src="/static/assets/scripts/auth.js"></script>
+  </body>
+</html>
