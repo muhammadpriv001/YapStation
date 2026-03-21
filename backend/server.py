@@ -1,6 +1,7 @@
 from fastapi import FastAPI, Request, WebSocket, WebSocketDisconnect
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
+from fastapi.responses import HTMLResponse
 import engine
 import os
 
@@ -78,15 +79,22 @@ async def register(data: dict):
 # =========================
 @app.get("/chatList.html")
 def chat_list_page():
-    return FileResponse(os.path.join(FRONTEND, "chatList.html"))
+    response = FileResponse(os.path.join(FRONTEND, "chatList.html"))
+    response.headers["Cache-Control"] = "no-store"
+    return response
 
 @app.get("/newChat.html")
 def new_chat_page():
-    return FileResponse(os.path.join(FRONTEND, "newChat.html"))
+    response = FileResponse(os.path.join(FRONTEND, "newChat.html"))
+    response.headers["Cache-Control"] = "no-store"
+    return response
 
 @app.get("/activeChat.html")
 def active_chat():
-    return FileResponse(os.path.join(FRONTEND, "activeChat.html"))
+    path = os.path.join(FRONTEND, "activeChat.html")
+    with open(path, "r", encoding="utf-8") as f:
+        html = f.read()
+    return HTMLResponse(content=html)
 
 # =========================
 # API
@@ -147,18 +155,62 @@ async def websocket_endpoint(ws: WebSocket, username: str):
         while True:
             data = await ws.receive_json()
 
-            # IGNORE PING / ONLINE EVENTS
-            if data.get("type") == "online":
+            msg_type = data.get("type")
+
+            # =========================
+            # ONLINE / PING EVENTS
+            # =========================
+            if msg_type == "online":
                 await broadcast_online()
                 continue
 
+            # =========================
+            # TYPING EVENTS
+            # =========================
+            if msg_type in ["typing", "stop_typing"]:
+                convo_id = data.get("conversationId")
+                sender = data.get("sender")
+
+                if convo_id is None or sender is None:
+                    continue
+
+                try:
+                    convo_id = int(convo_id)
+                except:
+                    continue
+
+                users = core.getConversationUsers(convo_id)
+
+                payload = {
+                    "type": msg_type,
+                    "sender": sender,
+                    "conversationId": convo_id
+                }
+
+                for u in users:
+                    if u != sender and u in connections:
+                        dead = []
+
+                        for conn in connections[u]:
+                            try:
+                                await conn.send_json(payload)
+                            except:
+                                dead.append(conn)
+
+                        for d in dead:
+                            connections[u].remove(d)
+
+                continue
+
+            # =========================
+            # NORMAL MESSAGE FLOW
+            # =========================
             convo_id = data.get("conversationId")
             sender = data.get("sender")
-            msg_type = data.get("type")
             content = data.get("content", "")
             media = data.get("media", "")
 
-            # SAFE VALIDATION (FIXED)
+            # VALIDATION
             if convo_id is None or sender is None or msg_type is None:
                 continue
 
@@ -167,6 +219,7 @@ async def websocket_endpoint(ws: WebSocket, username: str):
             except:
                 continue
 
+            # SAVE MESSAGE
             core.sendMessage(sender, convo_id, content, msg_type, media)
 
             users = core.getConversationUsers(convo_id)
